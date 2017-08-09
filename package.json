@@ -25,7 +25,7 @@
     "react",
     "react-native"
   ],
-  "author": "Adriano Melo <rnml@adrianomelo.com>",
+  "author": "Adriano Melo <npm@adrianomelo.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/adrianomelo/react-native-metaui/issues"
