@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty list -> empty list 1`] = `null`;
+
+exports[`renders <View /> with <Text /> 1`] = `<View />`;
+
+exports[`renders <View /> with list of <Text /> 1`] = `<View />`;
+
+exports[`renders <View /> with null children 1`] = `<View />`;
+
+exports[`renders single <Text /> 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+/>
+`;
+
+exports[`returns string when input is string 1`] = `""`;
+
+exports[`undefined -> null 1`] = `null`;
