@@ -14,6 +14,7 @@ npm install react-native-metaui --save
 import React from 'react';
 import {
   View,
+  Text,
   StyleSheet
 } from 'react-native';
 import createComponent from 'react-native-metaui';
@@ -26,7 +27,7 @@ export default class App extends React.Component {
         children: 'Hello, world!'
       }
     };
-    const component = createComponent(test);
+    const component = createComponent(test, {Text});
     return (
       <View style={styles.container}>
         {component}

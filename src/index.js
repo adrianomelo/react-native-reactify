@@ -1,4 +1,3 @@
 
-import createReactNativeComponent from './create-react-native-component';
-
-export default createReactNativeComponent;
+import createComponent from './create-component';
+export default createComponent;

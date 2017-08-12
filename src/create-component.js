@@ -14,13 +14,14 @@ function createComponent(json, options = {}) {
     return null;
   }
 
-  let {type, children, props} = json;
+  let {type} = json;
   if (!type || !types.hasOwnProperty(type)) {
     throw new Error(`Type ${type} is not defined`);
   }
 
-  if (children) {
-    children = createComponent(children, options);
+  let {props} = json;
+  if (props && props.children) {
+    children = createComponent(props.children, options);
   }
 
   const Component = types[type];

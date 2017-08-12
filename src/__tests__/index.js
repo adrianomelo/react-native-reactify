@@ -47,6 +47,7 @@ test('renders <View /> with list of <Text />', () => {
         {
           type: 'Text',
           props: {
+            key: 0,
             children: 'Hello World'
           }
         }
@@ -91,5 +92,5 @@ test('undefined -> null', () => {
 });
 
 test('throws exeception when type is not defined', () => {
-  expect(createComponent({}, {})).toThrow();
+  expect(() => createComponent({}, {})).toThrow(Error);
 });
