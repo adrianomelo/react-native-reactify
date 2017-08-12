@@ -1,16 +1,3 @@
-# React Native MetaUi
-
-Create React Native interfaces using JSON format.
-
-## Install
-
-```sh
-npm install react-native-metaui --save
-```
-
-## Usage
-
-```js
 import React from 'react';
 import {View, Text} from 'react-native';
 import reactify from 'react-native-metaui';
@@ -39,7 +26,6 @@ const helloWorld = {
 
 export default class App extends React.Component {
   render() {
-    return reactify(helloWorld, {types: {View, Text}};
+    return reactify(helloWorld, {types: {View, Text}});
   }
 }
-```
