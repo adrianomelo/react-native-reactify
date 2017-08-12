@@ -9,7 +9,11 @@
   },
   "jest": {
     "collectCoverage": true,
-    "preset": "react-native"
+    "preset": "react-native",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples"
+    ]
   },
   "repository": {
     "type": "git",
