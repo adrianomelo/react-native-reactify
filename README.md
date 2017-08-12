@@ -1,11 +1,11 @@
-# React Native MetaUi
+# Reactify
 
 Create React Native interfaces using JSON format.
 
 ## Install
 
 ```sh
-npm install react-native-metaui --save
+npm install react-native-reactify --save
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install react-native-metaui --save
 ```js
 import React from 'react';
 import {View, Text} from 'react-native';
-import reactify from 'react-native-metaui';
+import reactify from 'react-native-reactify';
 
 const helloWorld = {
   type: 'View',

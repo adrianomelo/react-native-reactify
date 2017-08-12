@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import reactify from 'react-native-metaui';
+import reactify from 'react-native-reactify';
 
 const helloWorld = {
   type: 'View',
