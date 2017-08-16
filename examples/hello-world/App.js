@@ -1,11 +1,19 @@
 import React from 'react';
-import {View, Text, Button, Alert} from 'react-native';
+import {View, Button, Alert} from 'react-native';
 import reactify from 'react-native-reactify';
 
+/**
+ * It will be executed when the "Hello" button is pressed.
+ *
+ * @param {Event} e
+ */
 function onPress(e) {
   Alert.alert('World');
 }
 
+/**
+ * Object description of a React component.
+ */
 const helloWorld = {
   type: 'View',
   style: {
@@ -19,7 +27,6 @@ const helloWorld = {
     title: 'Hello',
     onPress,
     style: {
-      accessibilityLabel: 'text',
       fontSize: 40,
       color: '#444'
     }
@@ -28,6 +35,6 @@ const helloWorld = {
 
 export default class App extends React.Component {
   render() {
-    return reactify(helloWorld, {View, Text, Button});
+    return reactify(helloWorld, {View, Button});
   }
 }
