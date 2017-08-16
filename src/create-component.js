@@ -1,32 +1,39 @@
 import React from 'react';
 
-function createComponent(json, options = {}) {
-  const {types = {}} = options;
-  if (typeof json === 'string') {
-    return json;
+/**
+ * Creates a tree of React components based on the object description
+ * of the components.
+ *
+ * @param {Object} object 
+ * @param {React.Component[]} componentTypes
+ * @returns {React.Component}
+ */
+function createComponent(object, componentTypes) {
+  if (typeof object === 'string') {
+    return object;
   }
 
-  if (Array.isArray(json)) {
-    return json.map((item) => createComponent(item, options));
+  if (Array.isArray(object)) {
+    return object.map((item) => createComponent(item, componentTypes));
   }
 
-  if (typeof json !== 'object' || json == undefined) {
+  if (typeof object !== 'object' || object == undefined) {
     return null;
   }
 
-  let {type} = json;
-  if (!type || !types.hasOwnProperty(type)) {
+  let {type, ...objectWithoutType} = object;
+  if (!type || !componentTypes.hasOwnProperty(type)) {
     throw new Error(`Type ${type} is not defined`);
   }
 
-  let {props} = json;
-  if (props && props.children) {
-    children = createComponent(props.children, options);
+  let {children} = object;
+  if (children) {
+    children = createComponent(children, componentTypes);
   }
 
-  const Component = types[type];
+  const Component = componentTypes[type];
   return (
-    <Component {...props}>
+    <Component {...objectWithoutType}>
       {children}
     </Component>
   );

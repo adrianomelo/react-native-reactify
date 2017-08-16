@@ -8,66 +8,50 @@ import createComponent from '../create-component';
 import renderer from 'react-test-renderer';
 
 test('renders single <Text />', () => {
-  const types = {Text};
   const text = {
     type: 'Text',
-    props: {
-      children: 'Hello World'
-    }
+    children: 'Hello World'
   };
-  const component = createComponent(text, {types});
+  const component = createComponent(text, {Text});
   const tree = renderer.create(component).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('renders <View /> with <Text />', () => {
-  const types = {Text, View};
   const text = {
     type: 'View',
-    props: {
-      children: {
-        type: 'Text',
-        props: {
-          children: 'Hello World'
-        }
-      }
+    children: {
+      type: 'Text',
+      children: 'Hello World'
     }
   };
-  const component = createComponent(text, {types});
+  const component = createComponent(text, {Text, View});
   const tree = renderer.create(component).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('renders <View /> with list of <Text />', () => {
-  const types = {Text, View};
   const text = {
     type: 'View',
-    props: {
-      children: [
-        {
-          type: 'Text',
-          props: {
-            key: 0,
-            children: 'Hello World'
-          }
-        }
-      ]
-    }
+    children: [
+      {
+        type: 'Text',
+        key: 0,
+        children: 'Hello World'
+      }
+    ]
   };
-  const component = createComponent(text, {types});
+  const component = createComponent(text, {Text, View});
   const tree = renderer.create(component).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('renders <View /> with null children', () => {
-  const types = {Text, View};
   const text = {
     type: 'View',
-    props: {
-      children: null
-    }
+    children: null
   };
-  const component = createComponent(text, {types});
+  const component = createComponent(text, {Text, View});
   const tree = renderer.create(component).toJSON();
   expect(tree).toMatchSnapshot();
 });
